@@ -1,38 +1,325 @@
-.App {
-  text-align: center;
+:root{
+  --red-color: #fd3f46;
+  --main-bg-color: #d1e5e7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  background-color: var(--main-bg-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 98vw;
+  height: 98vh;
   display: flex;
-  flex-direction: column;
+  gap: 1px;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+/* MAIN BODY */
+
+.mainBody{
+  background-color: var(--red-color);
+  width: 450px;
+  height: 600px;
+  border-radius: 10px 0 0 10px;
+  position: relative;
+}
+
+.blueBall{
+  position: absolute;
+  background-color: #649cd3;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 5px solid white;
+  top: 20px;
+  left: 20px;
+}
+
+.red{
+  background-color: red;
+  left: 100px;
+}
+.yellow{
+  background-color: yellow;
+  left: 130px;
+}
+.green{
+  background-color: green;
+  left: 160px;
+}
+
+.miniBall{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 45px;
+  border-radius: 100%;
+  border: 1px solid #d01118;
+}
+
+.mainScreen{
+  background-color: black;
+  width: 230px;
+  height: 180px;
+  position: absolute;
+  top: 120px;
+  left: 60px;
+  border: 50px solid #fff2ed;
+  border-radius: 5px;
+}
+
+.dotLeft{
+  background-color: var(--red-color);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -30px;
+  left: 95px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.dotRight{
+  background-color: var(--red-color);
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: -30px;
+  left: 125px;
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.decliveBottom{
+/*    background-color: var(--red-color); */
+  position: absolute;
+  border: 50px solid transparent;
+  border-bottom: 50px solid var(--red-color);
+  border-top: 0;
+  border-left: 0;
+  top: 180px;
+  left: -51px;
+}
+
+
+.imageContainer{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer > img{
+  height: 90%;
+}
+
+.searchTab{
+  position: absolute;
+  top: 425px;
+  width: 100%;
+  
+}
+
+.searchTab > form{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input[type='submit']{
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+input[type="text"]{
+  width: 220px;
+  background-color: rgba(255, 255, 5, 0.751);
+  border-style: none;
   color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 0 10px 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+input[type="text"]:focus{
+  outline-width: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.crossY{
+  position: absolute;
+  width: 25px;
+  height: 85px;
+  background-color: black;
+  top: 490px;
+  left: 330px;
+  border-radius: 5px;
+}
+
+.crossX{
+  position: absolute;
+  width: 85px;
+  height: 25px;
+  background-color: black;
+  top: 520px;
+  left: 300px;
+  border-radius: 5px;
+}
+
+.crossX::before{
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: rgb(96, 81, 81);
+  top: 5px;
+  left: 35px;
+}
+
+.greenScreen{
+  position: absolute;
+  width: 140px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: green;
+  top: 505px;
+  left: 100px;
+}
+
+
+/* SECONDARY BODY */
+
+.secondaryBody{
+  background-color: var(--red-color);
+  margin-top: 90px;
+  width: 450px;
+  height: 500px;
+  position: relative;
+  border-radius: 0 10px 10px 0;
+}
+
+.overHead{
+  position: absolute;
+  background-color: var(--red-color);
+  width: 180px;
+  height: 50px;
+  top: -50px;
+}
+
+.declive{
+  position: absolute;
+  border: 90px solid transparent;
+  border-bottom: 50px solid var(--red-color);
+  border-top: 0;
+  border-left: 0;
+  top: -50px;
+  left: 180px;
+}
+
+.secondaryScreen{
+  position: absolute;
+  background-color: black;
+  width: 330px;
+  height: 240px;
+  top: 45px;
+  left: 60px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.base{
+  background-color: white;
+  width: 326px;
+  height: 236px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.base::before{
+  position: absolute;
+  content: ' ';
+  background-color: var(--red-color);
+  height: 236px;
+  width: 60px;
+  border-radius: 5px 0 0 5px;
+}
+
+.base > ul{
+  list-style: none;
+  padding-left: 80px;
+  padding-top: 10px;
+  margin: 0;
+  
+}
+
+.base li{
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.pokemonSelector{
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 321px;
+  height: 44px;
+  border: 4px solid black;
+  border-radius: 5px;
+  outline: 1px solid gray;
+
+}
+
+.pokemonSelector > img{
+  width: 40px;
+  position: relative;
+  left: 9px;
+  top: 2px;
+}
+
+
+.blueGroup{
+  position: absolute;
+  background-color: black;
+  width: 330px;
+  height: 134px;
+  top: 305px;
+  left: 60px;
+  border-radius: 5px;
+}
+
+.squareGroup{
+  position: absolute;
+  width: 330px;
+  height: 66px;
+  border-radius: 5px;
+  display: flex;
+
+}
+
+.squareGroup:nth-child(2){
+  top: 67px;
+}
+
+.square{
+  background-color: #6fc8f2;
+  width: 65px;
+  height: 65px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 980px) {
+  .secondaryBody{
+      display: none;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.gray{
+  filter: grayscale(1);
 }
