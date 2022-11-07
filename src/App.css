@@ -238,12 +238,13 @@ input[type="text"]:focus{
   height: 236px;
   border-radius: 5px;
   margin: 2px;
+  overflow-y: scroll;
 }
 
 .base::before{
   position: absolute;
   content: ' ';
-  background-color: var(--red-color);
+  background-color: #649cd3;
   height: 236px;
   width: 60px;
   border-radius: 5px 0 0 5px;
@@ -251,28 +252,26 @@ input[type="text"]:focus{
 
 .base > ul{
   list-style: none;
-  padding-left: 80px;
-  padding-top: 10px;
+  padding-left: 0;
   margin: 0;
-  
 }
 
 .base li{
-  padding: 10px;
+  padding: 0;
   font-size: 1.2rem;
   font-weight: bold;
+  position: relative;
 }
 
 .pokemonSelector{
   position: absolute;
-  top: 50px;
+  top: 42px;
   left: 0;
   width: 321px;
   height: 44px;
   border: 4px solid black;
   border-radius: 5px;
   outline: 1px solid gray;
-
 }
 
 .pokemonSelector > img{
@@ -280,6 +279,12 @@ input[type="text"]:focus{
   position: relative;
   left: 9px;
   top: 2px;
+}
+
+.pokemonSelect:hover{
+  color: #649cd3;
+  filter: grayscale(1) blur(1px);
+  
 }
 
 
@@ -320,6 +325,7 @@ input[type="text"]:focus{
   }
 }
 
-.gray{
-  filter: grayscale(1);
+.unselected{
+  filter: grayscale(1) blur(1px);
+  
 }
