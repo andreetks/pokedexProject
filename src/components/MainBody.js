@@ -17,7 +17,7 @@ const MainBody = ({ pokemon }) => {
             </div>
             <div class="searchTab">
                 <form action="">
-                    <input type="text" placeholder={pokemon.name} />
+                    <input type="text"  value={pokemon.name}/>
                     <input type="submit" />
                 </form>
             </div>

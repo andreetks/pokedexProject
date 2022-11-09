@@ -155,9 +155,9 @@ input[type='submit']{
 
 input[type="text"]{
   width: 220px;
-  background-color: rgba(255, 255, 5, 0.751);
+  background-color: #ffff05c0;
   border-style: none;
-  color: white;
+  color: black;
   font-weight: bold;
   font-size: 1.4rem;
   padding: 0 10px 0 10px;
@@ -258,52 +258,6 @@ input[type="text"]:focus{
   overflow-y: scroll;
 }
 
-/* .base::before{
-  position: absolute;
-  content: ' ';
-  background-color: #649cd3;
-  height: 236px;
-  width: 60px;
-  border-radius: 5px 0 0 5px;
-} */
-
-/* .base > ul{
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-} */
-
-/* .base li{
-  padding: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  position: relative;
-} */
-
-/* .pokemonSelector{
-  position: absolute;
-  top: 42px;
-  left: 0;
-  width: 321px;
-  height: 44px;
-  border: 4px solid black;
-  border-radius: 5px;
-  outline: 1px solid gray;
-} */
-
-/* .pokemonSelector > img{
-  width: 40px;
-  position: relative;
-  left: 9px;
-  top: 2px;
-  filter: grayscale(1) blur(1px);
-} */
-
-.pokemonSelect:hover{
-  color: #649cd3;
-}
-
-
 .blueGroup{
   position: absolute;
   background-color: black;
@@ -341,3 +295,56 @@ input[type="text"]:focus{
   }
 }
 
+.pokemonItem{
+  display: block;
+  position: relative;
+  padding: 10px 0 10px 65px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.pokemonItem input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  height: 40px;
+  width: 40px;
+  background-color: #eee;
+  border-radius: 50%;
+  background-image : url(https://img.icons8.com/color/40/pokeball-2.png);
+  filter: grayscale(1)
+}
+
+.checkContainer {
+  display: none;
+  position: absolute;
+  width: 98%;
+  height: 89%;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+}
+
+.pokemonItem:hover input ~ .checkmark {
+  background-color: #ccc;
+  filter: none !important;
+}
+
+.pokemonItem input:checked ~ .checkmark {
+  background-color: #2196F3;
+  filter: none !important;
+}
+.pokemonItem input:checked ~ .checkContainer {
+  display: block;
+  border: 3px solid black;
+}

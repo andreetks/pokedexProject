@@ -10,6 +10,7 @@ const SecondaryBody = ({
   setNextPage,
   setPrevPage,
 }) => {
+
   const goNext = () => {
     fetch(nextPage)
       .then((response) => response.json())
@@ -18,7 +19,9 @@ const SecondaryBody = ({
         setNextPage(data?.next);
         setPrevPage(data?.previous);
       });
+    document.querySelector(".base").scrollTop = 0;
   };
+
   const goPrev = () => {
     fetch(prevPage)
       .then((response) => response.json())
@@ -27,6 +30,8 @@ const SecondaryBody = ({
         setNextPage(data?.next);
         setPrevPage(data?.previous);
       });
+    document.querySelector(".base").scrollTop =
+      document.querySelector(".base").scrollHeight;
   };
 
   return (
@@ -42,10 +47,10 @@ const SecondaryBody = ({
               margin: 0,
             }}
           >
-            {pokemonList.map((pokemon) => (
+            {pokemonList.map((pokemonItem) => (
               <PokemonList
-                name={pokemon.name}
-                key={pokemon.name}
+                name={pokemonItem.name}
+                key={pokemonItem.name}
                 setPokemon={setPokemon}
               />
             ))}
