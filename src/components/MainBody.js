@@ -1,6 +1,25 @@
 import React from "react";
 
-const MainBody = ({ pokemon }) => {
+const MainBody = ({ pokemon, setPokemon }) => {
+
+  const manageChange = (e) => {
+    console.log(e.target.value)
+    setPokemon({...pokemon, name: e.target.value})
+  }
+
+  const changePokemon = (e) =>{
+    e.preventDefault()
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setPokemon({
+          name: `${data.name}`,
+          image: `${data.sprites.other["official-artwork"]["front_default"]}`,
+        });
+      });
+  }
+
   return (
     <div className="mainBody">
       <div className="blueBall"></div>
@@ -17,8 +36,8 @@ const MainBody = ({ pokemon }) => {
       </div>
       <div className="searchTab">
         <form action="">
-          <input type="text" value={pokemon.name} />
-          <input type="submit" />
+          <input type="text" value={pokemon.name} onChange={manageChange}/>
+          <input type="submit" onClick={changePokemon} />
         </form>
       </div>
       <div className="indicators">

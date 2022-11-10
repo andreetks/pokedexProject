@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <MainBody pokemon={pokemon} />
+      <MainBody pokemon={pokemon} setPokemon={setPokemon} />
       <SecondaryBody
         pokemonList={pokemonList}
         setPokemon={setPokemon}
