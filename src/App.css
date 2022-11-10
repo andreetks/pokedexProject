@@ -31,6 +31,7 @@ html{
   gap: 1px;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 /* MAIN BODY */
@@ -38,6 +39,7 @@ html{
 .mainBody{
   background-color: var(--red-color);
   width: 450px;
+  min-width: 300px;
   height: 600px;
   border-radius: 10px 0 0 10px;
   position: relative;
@@ -82,7 +84,9 @@ html{
   height: 180px;
   position: absolute;
   top: 120px;
-  left: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   border: 50px solid #fff2ed;
   border-radius: 5px;
 }
@@ -136,8 +140,9 @@ html{
 .searchTab{
   position: absolute;
   top: 425px;
-  width: 100%;
-  
+  left: 0;
+  right: 0;
+  margin: 0 auto;  
 }
 
 .searchTab > form{
@@ -167,24 +172,34 @@ input[type="text"]:focus{
   outline-width: 0;
 }
 
+.indicators{
+  position: relative;
+  top: 490px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.indicatorsFlex{
+  display: flex;
+  justify-content: space-around;
+}
+
 .crossY{
-  position: absolute;
   width: 25px;
   height: 85px;
   background-color: black;
-  top: 490px;
-  left: 330px;
   border-radius: 5px;
 }
 
 .crossX{
-  position: absolute;
+  position: relative;
   width: 85px;
   height: 25px;
   background-color: black;
-  top: 520px;
-  left: 300px;
   border-radius: 5px;
+  top: 30px;
+  left: -30px;
 }
 
 .crossX::before{
@@ -199,13 +214,11 @@ input[type="text"]:focus{
 }
 
 .greenScreen{
-  position: absolute;
   width: 140px;
   height: 70px;
   border-radius: 5px;
   background-color: green;
-  top: 505px;
-  left: 100px;
+  margin-top: 10px;
 }
 
 
@@ -244,7 +257,9 @@ input[type="text"]:focus{
   width: 330px;
   height: 240px;
   top: 45px;
-  left: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -264,7 +279,9 @@ input[type="text"]:focus{
   width: 330px;
   height: 134px;
   top: 305px;
-  left: 60px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   border-radius: 5px;
 }
 
@@ -289,11 +306,6 @@ input[type="text"]:focus{
   border-radius: 5px;
 }
 
-@media screen and (max-width: 980px) {
-  .secondaryBody{
-      display: none;
-  }
-}
 
 .pokemonItem{
   display: block;
@@ -347,4 +359,48 @@ input[type="text"]:focus{
 .pokemonItem input:checked ~ .checkContainer {
   display: block;
   border: 3px solid black;
+}
+
+@media screen and (max-width: 910px) {
+  .container{
+    flex-flow: row wrap;
+    align-content: center;
+    margin-top: 30px;
+  }
+  .mainBody{
+    border-radius: 5px 5px 0 0 ;
+    height: 450px;
+  }
+  .miniBall{
+    top: 35px;
+  }
+  .blueBall{
+    top: 10px;
+  }
+  .mainScreen{
+    top: 80px;
+  }
+  .searchTab{
+    top: 380px;
+  }
+  .secondaryBody{
+    margin-top: -1px;
+    border-radius:  0 0 5px 5px;
+    margin-bottom: 40px;
+    height: 360px;
+  }
+  .declive, .indicators,.overHead {
+    display: none;
+  }
+  .secondaryScreen{
+    top: -15px;
+  }
+  .blueGroup{
+    height: 67px;
+    top: 250px;
+  }
+  .squareGroup:nth-child(2){
+    display: none;
+  }
+ 
 }

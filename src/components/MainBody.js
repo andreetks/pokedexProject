@@ -1,31 +1,41 @@
-import React from 'react'
+import React from "react";
 
 const MainBody = ({ pokemon }) => {
   return (
-    <div class="mainBody">
-            <div class="blueBall"></div>
-            <div class="red miniBall"></div>
-            <div class="yellow miniBall"></div>
-            <div class="green miniBall"></div>
-            <div class="mainScreen">
-                <div class="imageContainer">
-                    <img src={pokemon.image} alt="pika" />
-                </div>
-                <div class="dotLeft"></div>
-                <div class="dotRight"></div>
-                <div class="decliveBottom"></div>
-            </div>
-            <div class="searchTab">
-                <form action="">
-                    <input type="text"  value={pokemon.name}/>
-                    <input type="submit" />
-                </form>
-            </div>
-            <div class="crossY"></div>
-            <div class="crossX"></div>
-            <div class="greenScreen"></div>
+    <div className="mainBody">
+      <div className="blueBall"></div>
+      <div className="red miniBall"></div>
+      <div className="yellow miniBall"></div>
+      <div className="green miniBall"></div>
+      <div className="mainScreen">
+        <div className="imageContainer">
+          <img src={pokemon.image} alt="pika" />
         </div>
-  )
-}
+        <div className="dotLeft"></div>
+        <div className="dotRight"></div>
+        <div className="decliveBottom"></div>
+      </div>
+      <div className="searchTab">
+        <form action="">
+          <input type="text" value={pokemon.name} />
+          <input type="submit" />
+        </form>
+      </div>
+      <div className="indicators">
+        <div className="indicatorsFlex">
+          <div className="greenScreen"></div>
+          <div className="arrows">
+            <div className="crossY">
+              <div className="crossX"></div>
+            </div>
+          </div>
+        </div>
+        {/* <div className="crossY"></div>
+        <div className="crossX"></div>
+        <div className="greenScreen"></div> */}
+      </div>
+    </div>
+  );
+};
 
-export default MainBody
+export default MainBody;
